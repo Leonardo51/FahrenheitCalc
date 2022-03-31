@@ -26,9 +26,11 @@
     const ans = document.querySelector('p');
     const calculateButton = document.getElementById('calc');
     const clearButton = document.getElementById('clear');
+    let celsius ="";
+
 
     function convertToCelsius(temp){
-        let celsius = (temp-32)*.5556;
+       celsius = (temp-32)*.5556;
         if (celsius>=0){
             return true;
         }
@@ -45,16 +47,19 @@
         return true;
     }
 
-    calculateButton.addEventListener('click', function(e){
+    calculateButton.addEventListener('click', function(e) {
         let fahrenheitTemp = +f.value;
-        let newTemp = `${celsius}`;
+        let newTemp = `${celsius}`
 
-        if(!checkIsValid(fahrenheitTemp)){
+        if (!checkIsValid(fahrenheitTemp)) {
             ans.textContent = "Invalid Inputs"
             return;
         }
-        if(convertToCelsius(fahrenheitTemp)){
-            ans.textContent = `${fahrenheitTemp} degrees fahrenheit is ${newTemp} degrees celsius.`}
+        convertToCelsius(fahrenheitTemp);{
+        {
+            ans.textContent = `${fahrenheitTemp} degrees fahrenheit is ${newTemp} degrees celsius.`
+        }
+    }
     })
 
     clearButton.addEventListener('click', function(e) {
