@@ -26,11 +26,11 @@
     const ans = document.querySelector('p');
     const calculateButton = document.getElementById('calc');
     const clearButton = document.getElementById('clear');
-    let celsius ="";
-
+    let celsius = [];
 
     function convertToCelsius(temp){
-       celsius = (temp-32)*.5556;
+        celsius = (temp-32)/1.8;
+        celsius = celsius.toFixed(2);
         if (celsius>=0){
             return true;
         }
